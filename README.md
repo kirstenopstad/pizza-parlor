@@ -83,6 +83,38 @@ myOrder.addItem(myPizza);
 myOrder;
 Expected Output: Order { items: { id: 1; toppings: ["anchovies", "pineapple"], size: "medium" ), currentId: 2}
 
+Describe: Pizza.prototype.getPrice()
+
+Test: "It should return the price of a small pizza"
+Code: const myPizza = new Pizza([], "small");
+myPizza.getPrice();
+Expected Output: 8
+
+Test: "It should return the price of a medium pizza"
+Code: const myPizza = new Pizza([], "medium");
+myPizza.getPrice();
+Expected Output: 10
+
+Test: "It should return the price of a large pizza"
+Code: const myPizza = new Pizza([], "large");
+myPizza.getPrice();
+Expected Output: 12
+
+Test: "It should return the price of an extra-large pizza"
+Code: const myPizza = new Pizza([], "extra-large");
+myPizza.getPrice();
+Expected Output: 14
+
+Test: "It should return the price of a pizza with one topping, adding one dollar per topping to the price set by size"
+Code: const myPizza = new Pizza(["anchovies"], "small");
+myPizza.getPrice();
+Expected Output: 9
+
+Test: "It should return the price of a pizza with two toppings, adding one dollar per topping to the price set by size"
+Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
+myPizza.getPrice();
+Expected Output: 12
+
 ```
 
 ## License
