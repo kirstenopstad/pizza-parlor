@@ -69,6 +69,8 @@ function handleAddToOrder() {
   // Display View Order button
   const viewOrderButton = document.getElementById("view-order");
   viewOrderButton.setAttribute("class", "btn btn-secondary")
+  // Reset item
+  document.getElementById("pizza-form").reset();
 }
 
 function handleViewOrder() {
