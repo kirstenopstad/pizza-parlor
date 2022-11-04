@@ -105,6 +105,11 @@ Code: const myPizza = new Pizza([], "extra-large");
 myPizza.getPrice();
 Expected Output: 14
 
+Test: "It should return 0 if no size is entered"
+Code: const myPizza = new Pizza([], );
+myPizza.getPrice();
+Expected Output: 0
+
 Test: "It should return the price of a pizza with one topping, adding one dollar per topping to the price set by size"
 Code: const myPizza = new Pizza(["anchovies"], "small");
 myPizza.getPrice();
