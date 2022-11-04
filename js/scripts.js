@@ -27,6 +27,10 @@ Pizza.prototype.getPrice = function() {
   } else {
     return 0;
   }
+  const toppingsCount = this.toppings.length;
+  const pricePerTopping = 1;
+  price += (toppingsCount * pricePerTopping);
+  
   return price;
  }
 
