@@ -93,21 +93,6 @@ Code: const myPizza = new Pizza([], "small");
 myPizza.getPrice();
 Expected Output: 8
 
-Test: "It should return the price of a medium pizza"
-Code: const myPizza = new Pizza([], "medium");
-myPizza.getPrice();
-Expected Output: 10
-
-Test: "It should return the price of a large pizza"
-Code: const myPizza = new Pizza([], "large");
-myPizza.getPrice();
-Expected Output: 12
-
-Test: "It should return the price of an extra-large pizza"
-Code: const myPizza = new Pizza([], "extra-large");
-myPizza.getPrice();
-Expected Output: 14
-
 Test: "It should return 0 if no size is entered"
 Code: const myPizza = new Pizza([], );
 myPizza.getPrice();
