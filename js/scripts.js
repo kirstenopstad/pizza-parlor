@@ -55,13 +55,15 @@ Order.prototype.addItem = function(item) {
 function handleAddToOrder(order) {
   // If required element of item is missing (like size), display error message
   const pizzaSize = document.getElementById("pizza-size").value;
-  let pizzaToppings = document.getElementByName("topping").value;
-  // Parse toppings
-  pizzaToppings = pizzaToppings.split("&");
+  let pizzaToppings = document.querySelectorAll('input[name=topping]:checked');
+  // For each checked topping element, replace element with element's value
+  pizzaToppings = Array.from(pizzaToppings);
+  pizzaToppings.forEach(function(element,index) {
+    pizzaToppings[index] = element.value;
+  });
   const myPizza = new Pizza (pizzaToppings, pizzaSize);
   order.addItem(myPizza);
   // Else display [View Order] Button
-  return order
 }
 
 window.addEventListener("load", function(){
