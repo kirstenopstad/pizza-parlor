@@ -20,12 +20,12 @@ A website for a pizza company where a user can choose one or more individual top
 * Allow the user to choose toppings and size for the pizza they'd like to order.
 * Create a pizza object constructor with properties for toppings and size.
 * Create a prototype method for the cost of a pizza depending on the selections chosen.
-Additionally:
-* Constructors and prototypes are used successfully.
-* Application works as expected.
-* Tests are included for each business logic behavior and code is committed after each test passes.
-* Project is in a polished, portfolio-quality state.
-* The prompt’s required functionality and baseline project requirements are in place by the deadline.
+* Additionally:
+  * Constructors and prototypes are used successfully.
+  * Application works as expected.
+  * Tests are included for each business logic behavior and code is committed after each test passes.
+  * Project is in a polished, portfolio-quality state.
+  * The prompt’s required functionality and baseline project requirements are in place by the deadline.
 <!-- [x] Screenshots
 
 ![Screenshots](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.03bZmDGXaBhBYyxxp3Ls3gHaEA%26pid%3DApi&f=1&ipt=e980d57210242747a51c41421e1f09a6de3b1fdaeaadd297496787bb64e80c88&ipo=images) -->
@@ -45,6 +45,9 @@ Additionally:
 * Open index.html in your browser.
 
 ## Known Bugs
+
+* UI Logic: clear checks from menu with handleAddToOrder();
+
 
 * No known bugs. If you find one, please email me at kirsten.opstad@gmail.com with the subject **[_Repo Name_] Bug** and include:
   * BUG: _A brief description of the bug_
