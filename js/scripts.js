@@ -54,8 +54,10 @@ Order.prototype.addItem = function(item) {
 let order = new Order();
 
 function handleAddToOrder() {
-  // TODO: If required element of item is missing (like size), display error message
-  // TODO: Else display [View Order] Button
+  // Remove error msg
+  if (document.getElementById("error-msg")) {
+    document.getElementById("error-msg").remove();
+  }
   const pizzaSize = document.getElementById("pizza-size").value;
   let pizzaToppings = document.querySelectorAll('input[name=topping]:checked');
   // For each checked topping element, replace element with element's value
@@ -64,19 +66,28 @@ function handleAddToOrder() {
     pizzaToppings[index] = element.value;
   });
   const myPizza = new Pizza (pizzaToppings, pizzaSize);
-  myPizza.getPrice();
+  const isValidSize = myPizza.getPrice();
+  // TODO: If required element of item is missing (like size), display error message
+  if (isValidSize === 0) {
+    // Display error message
+    const errorMsg = document.createElement("div");
+    errorMsg.setAttribute("id", "error-msg")
+    errorMsg.innerText = "Please enter size!";
+    document.getElementById("pizza-form").prepend(errorMsg);
+  } else {
+  // TODO: Else display [View Order] Button
   order.addItem(myPizza);
   // Display View Order button
   const viewOrderButton = document.getElementById("view-order");
   viewOrderButton.setAttribute("class", "btn btn-secondary")
   // Reset item
   document.getElementById("pizza-form").reset();
+  }
 }
 
 function handleViewOrder() {
     // Hide Menu 
     document.getElementById("food-menu").setAttribute("class", "hidden");
-    console.log("View Order Button works")
     // Show Order Details
     const orderDetailsDiv = document.createElement("div");
     orderDetailsDiv.setAttribute("id", "order-details");

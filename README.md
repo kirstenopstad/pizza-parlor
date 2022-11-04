@@ -46,9 +46,6 @@ A website for a pizza company where a user can choose one or more individual top
 
 ## Known Bugs
 
-* UI Logic: clear checks from menu with handleAddToOrder();
-
-
 * No known bugs. If you find one, please email me at kirsten.opstad@gmail.com with the subject **[_Repo Name_] Bug** and include:
   * BUG: _A brief description of the bug_
   * FIX: _Suggestion for solution (if you have one!)_
