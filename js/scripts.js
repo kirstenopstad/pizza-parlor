@@ -5,6 +5,28 @@ function Pizza(toppings, size) {
   this.size = size;
 }
 
+Pizza.prototype.getPrice = function() {
+  let price = 0;
+  if (this.size) {
+    switch (this.size) {
+      case ("small"):
+        price = 8;
+        break;
+      case ("medium"):
+        price = 10;
+        break;
+      case ("large"):
+        price = 12;
+        break;
+      case ("extra-large"):
+        price = 14
+    }
+  } else {
+    return 0;
+  }
+  return price;
+ }
+
 function Order() {
   this.items = {};
   this.currentId = 0;
