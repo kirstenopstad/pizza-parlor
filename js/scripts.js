@@ -78,6 +78,9 @@ function handleViewOrder() {
     // Show Order Details
     const orderDetailsDiv = document.createElement("div");
     orderDetailsDiv.setAttribute("id", "order-details");
+    const h4 = document.createElement("h4");
+    h4.innerText = "Order Details"
+    orderDetailsDiv.append(h4);
     const ul = document.createElement("ul");
     const arrayOfItems = Object.keys(order.items);
     for (i = 1; i <= arrayOfItems.length; i++) {
@@ -85,13 +88,17 @@ function handleViewOrder() {
       li.innerText = order.items[i].size + " " + order.items[i].toppings.length + "-topping pizza.";
       const priceSpan = document.createElement("span");
       priceSpan.setAttribute("class", "item-price");
-      priceSpan.innerText = "$" + order.items[i].price + ".";
+      priceSpan.innerText = "$" + order.items[i].price;
       li.append(priceSpan);
       ul.append(li);
     };
     orderDetailsDiv.append(ul);
     document.getElementById("order-form").append(orderDetailsDiv);
     // Show [Back to Menu] button
+    const backToMenu = document.createElement("button");
+    backToMenu.setAttribute("class", "btn btn-secondary");
+    backToMenu.innerText = "Back to Menu";
+    orderDetailsDiv.append(backToMenu);
 }
 
 window.addEventListener("load", function(){
