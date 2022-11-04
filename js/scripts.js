@@ -31,7 +31,6 @@ Pizza.prototype.getPrice = function() {
   price += (toppingsCount * pricePerTopping);
 
   this.price = price;
-  return price;
  }
 
 function Order() {
@@ -52,6 +51,7 @@ Order.prototype.addItem = function(item) {
 }
 
 // User Interface Logic
+let order = new Order();
 
 function handleAddToOrder(order) {
   // TODO: If required element of item is missing (like size), display error message
@@ -64,14 +64,15 @@ function handleAddToOrder(order) {
     pizzaToppings[index] = element.value;
   });
   const myPizza = new Pizza (pizzaToppings, pizzaSize);
-  const price = myPizza.getPrice();
+  myPizza.getPrice();
   order.addItem(myPizza);
 
 }
 
+
+
 window.addEventListener("load", function(){
-  // Declare global myOrder as global Object
-  const order = new Order();
+
   // When customer clicks "Add to Order"
   const addToOrder = document.getElementById("add-to-order");
   addToOrder.addEventListener("click", function() {
@@ -83,4 +84,5 @@ window.addEventListener("load", function(){
     // Hide Menu 
     // Show Order Details
     // Show [Back to Menu] button
+  return order;
 });
