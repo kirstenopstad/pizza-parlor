@@ -99,6 +99,18 @@ function handleViewOrder() {
     backToMenu.setAttribute("class", "btn btn-secondary");
     backToMenu.innerText = "Back to Menu";
     orderDetailsDiv.append(backToMenu);
+    // Listen for [Back to Menu] click
+    backToMenu.addEventListener("click", function() {
+      handleBacktoMenu(orderDetailsDiv);
+    });
+}
+
+function handleBacktoMenu(orderDetailsDiv) {
+  // Delete Order Details div
+  orderDetailsDiv.remove();
+  // Unhide food menu  
+  document.getElementById("food-menu").setAttribute("class", null);
+
 }
 
 window.addEventListener("load", function(){
