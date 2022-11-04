@@ -30,6 +30,7 @@ Pizza.prototype.getPrice = function() {
   const pricePerTopping = 1;
   price += (toppingsCount * pricePerTopping);
 
+  this.price = price;
   return price;
  }
 
@@ -53,7 +54,8 @@ Order.prototype.addItem = function(item) {
 // User Interface Logic
 
 function handleAddToOrder(order) {
-  // If required element of item is missing (like size), display error message
+  // TODO: If required element of item is missing (like size), display error message
+  // TODO: Else display [View Order] Button
   const pizzaSize = document.getElementById("pizza-size").value;
   let pizzaToppings = document.querySelectorAll('input[name=topping]:checked');
   // For each checked topping element, replace element with element's value
@@ -62,8 +64,9 @@ function handleAddToOrder(order) {
     pizzaToppings[index] = element.value;
   });
   const myPizza = new Pizza (pizzaToppings, pizzaSize);
+  const price = myPizza.getPrice();
   order.addItem(myPizza);
-  // Else display [View Order] Button
+
 }
 
 window.addEventListener("load", function(){
