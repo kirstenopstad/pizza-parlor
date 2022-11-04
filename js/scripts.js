@@ -30,7 +30,7 @@ Pizza.prototype.getPrice = function() {
   const toppingsCount = this.toppings.length;
   const pricePerTopping = 1;
   price += (toppingsCount * pricePerTopping);
-  
+
   return price;
  }
 
@@ -50,3 +50,13 @@ Order.prototype.addItem = function(item) {
   // Use item.id as key for value item 
   this.items[item.id] = item;
 }
+
+// User Interface Logic
+
+// When customer clicks "Add to Order"
+  // If required element of item is missing (like size), display error message
+  // Else display [View Order] Button
+// When customer clicks "View Order"
+  // Hide Menu 
+  // Show Order Details
+  // Show [Back to Menu] button
