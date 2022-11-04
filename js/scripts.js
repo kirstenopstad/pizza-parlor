@@ -1,5 +1,4 @@
 // Business Logic
-
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
@@ -53,10 +52,30 @@ Order.prototype.addItem = function(item) {
 
 // User Interface Logic
 
-// When customer clicks "Add to Order"
+function handleAddToOrder(order) {
   // If required element of item is missing (like size), display error message
+  const pizzaSize = document.getElementById("pizza-size").value;
+  let pizzaToppings = document.getElementByName("topping").value;
+  // Parse toppings
+  pizzaToppings = pizzaToppings.split("&");
+  const myPizza = new Pizza (pizzaToppings, pizzaSize);
+  order.addItem(myPizza);
   // Else display [View Order] Button
-// When customer clicks "View Order"
-  // Hide Menu 
-  // Show Order Details
-  // Show [Back to Menu] button
+  return order
+}
+
+window.addEventListener("load", function(){
+  // Declare global myOrder as global Object
+  const order = new Order();
+  // When customer clicks "Add to Order"
+  const addToOrder = document.getElementById("add-to-order");
+  addToOrder.addEventListener("click", function() {
+    handleAddToOrder(order);
+    
+  })
+
+  // When customer clicks "View Order"
+    // Hide Menu 
+    // Show Order Details
+    // Show [Back to Menu] button
+});
