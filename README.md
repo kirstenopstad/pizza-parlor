@@ -78,7 +78,7 @@ Describe: Order.prototype.addItem()
 
 Test: "It should return an Order object that contains a Pizza object nested within the items property"
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
-const myOrder = new Order( myPizza, 1)
+const myOrder = new Order()
 myOrder.addItem(myPizza);
 myOrder;
 Expected Output: Order { items: { id: 1; toppings: ["anchovies", "pineapple"], size: "medium" ), currentId: 2}
