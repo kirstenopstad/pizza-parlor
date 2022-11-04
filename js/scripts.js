@@ -53,7 +53,7 @@ Order.prototype.addItem = function(item) {
 // User Interface Logic
 let order = new Order();
 
-function handleAddToOrder(order) {
+function handleAddToOrder() {
   // TODO: If required element of item is missing (like size), display error message
   // TODO: Else display [View Order] Button
   const pizzaSize = document.getElementById("pizza-size").value;
@@ -71,25 +71,25 @@ function handleAddToOrder(order) {
   viewOrderButton.setAttribute("class", "btn btn-secondary")
 }
 
-function handleViewOrder(order) {
+function handleViewOrder() {
     // Hide Menu 
     document.getElementById("food-menu").setAttribute("class", "hidden");
     console.log("View Order Button works")
     // Show Order Details
     const orderDetailsDiv = document.createElement("div");
     orderDetailsDiv.setAttribute("id", "order-details");
-    const orderList = document.createElement("ul");
-    const arrayOfItems = Array.from(order.items);
-    arrayOfItems.forEach(function(pizza) {
+    const ul = document.createElement("ul");
+    const arrayOfItems = Object.keys(order.items);
+    for (i = 1; i <= arrayOfItems.length; i++) {
       const li = document.createElement("li");
-      li.innerText = pizza.size + " " + pizza.toppings.length + "-topping pizza."
+      li.innerText = order.items[i].size + " " + order.items[i].toppings.length + "-topping pizza.";
       const priceSpan = document.createElement("span");
       priceSpan.setAttribute("class", "item-price");
-      priceSpan.innerText = "$" + pizza.price + ".";
+      priceSpan.innerText = "$" + order.items[i].price + ".";
       li.append(priceSpan);
-      orderList.append(li);
-    });
-    orderDetailsDiv.append(orderList);
+      ul.append(li);
+    };
+    orderDetailsDiv.append(ul);
     document.getElementById("order-form").append(orderDetailsDiv);
     // Show [Back to Menu] button
 }
@@ -98,11 +98,11 @@ window.addEventListener("load", function(){
   // When customer clicks "Add to Order"
   const addToOrder = document.getElementById("add-to-order");
   addToOrder.addEventListener("click", function() {
-    handleAddToOrder(order);
+    handleAddToOrder();
   });
   // When customer clicks "View Order"
   const viewOrder = document.getElementById("view-order");
   viewOrder.addEventListener("click", function(){
-    handleViewOrder(order);
+    handleViewOrder();
   });
 })
