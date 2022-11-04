@@ -61,7 +61,7 @@ Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
 
 Describe: Order()
 
-Test: "It should return an empty Order object with two properties for item and currentId"
+Test: "It should return an empty Order object with two properties for items and currentId"
 Code: 
 const myOrder = new Order()
 Expected Output: Order { items: {}, currentId: 0}
@@ -69,12 +69,12 @@ Expected Output: Order { items: {}, currentId: 0}
 Describe: Order.prototype.getId()
 
 Test: "It should return a unique id by incrementing current id by one"
-Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
-const myOrder = new Order( myPizza, 1)
+Code: 
+const myOrder = new Order()
 myOrder.getId();
-Expected Output: 2
+Expected Output: 1
 
-Describe: Order.protoype.addItem()
+Describe: Order.prototype.addItem()
 
 Test: "It should return an Order object that contains a Pizza object nested within the items property"
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
