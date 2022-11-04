@@ -6,6 +6,11 @@ function Pizza(toppings, size) {
 }
 
 function Order() {
-  this.item = {};
+  this.items = {};
   this.currentId = 0;
 }
+
+Order.prototype.getId = function() {
+  this.currentId++;
+  return this.currentId;
+};
