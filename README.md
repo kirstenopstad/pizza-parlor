@@ -110,6 +110,11 @@ Code: const myPizza = new Pizza([], );
 myPizza.getPrice();
 Expected Output: 0
 
+Test: "It should return 0 if invalid size is entered"
+Code: const myPizza = new Pizza([], "huge");
+myPizza.getPrice();
+Expected Output: 0
+
 Test: "It should return the price of a pizza with one topping, adding one dollar per topping to the price set by size"
 Code: const myPizza = new Pizza(["anchovies"], "small");
 myPizza.getPrice();
@@ -119,6 +124,12 @@ Test: "It should return the price of a pizza with two toppings, adding one dolla
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
 myPizza.getPrice();
 Expected Output: 12
+
+Test: "It should add the price of the pizza to the price property of the pizza"
+Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
+myPizza.getPrice();
+myPizza;
+Expected Output:  Pizza { toppings: ["anchovies", "pineapple"], size: "medium", price: 12 }
 
 ```
 
