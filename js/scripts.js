@@ -66,23 +66,43 @@ function handleAddToOrder(order) {
   const myPizza = new Pizza (pizzaToppings, pizzaSize);
   myPizza.getPrice();
   order.addItem(myPizza);
-
+  // Display View Order button
+  const viewOrderButton = document.getElementById("view-order");
+  viewOrderButton.setAttribute("class", "btn btn-secondary")
 }
 
-
+function handleViewOrder(order) {
+    // Hide Menu 
+    document.getElementById("food-menu").setAttribute("class", "hidden");
+    console.log("View Order Button works")
+    // Show Order Details
+    const orderDetailsDiv = document.createElement("div");
+    orderDetailsDiv.setAttribute("id", "order-details");
+    const orderList = document.createElement("ul");
+    const arrayOfItems = Array.from(order.items);
+    arrayOfItems.forEach(function(pizza) {
+      const li = document.createElement("li");
+      li.innerText = pizza.size + " " + pizza.toppings.length + "-topping pizza."
+      const priceSpan = document.createElement("span");
+      priceSpan.setAttribute("class", "item-price");
+      priceSpan.innerText = "$" + pizza.price + ".";
+      li.append(priceSpan);
+      orderList.append(li);
+    });
+    orderDetailsDiv.append(orderList);
+    document.getElementById("order-form").append(orderDetailsDiv);
+    // Show [Back to Menu] button
+}
 
 window.addEventListener("load", function(){
-
   // When customer clicks "Add to Order"
   const addToOrder = document.getElementById("add-to-order");
   addToOrder.addEventListener("click", function() {
     handleAddToOrder(order);
-    
-  })
-
+  });
   // When customer clicks "View Order"
-    // Hide Menu 
-    // Show Order Details
-    // Show [Back to Menu] button
-  return order;
-});
+  const viewOrder = document.getElementById("view-order");
+  viewOrder.addEventListener("click", function(){
+    handleViewOrder(order);
+  });
+})
