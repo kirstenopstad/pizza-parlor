@@ -62,9 +62,9 @@ Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
 Describe: Order()
 
 Test: "It should return an empty Order object with two properties for item and currentId"
-Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
-const myOrder = new Order( myPizza, 1)
-Expected Output: Order { items: { toppings: ["anchovies", "pineapple"], size: "medium" ), currentId: 1}
+Code: 
+const myOrder = new Order()
+Expected Output: Order { items: {}, currentId: 0}
 
 Describe: Order.prototype.getId()
 
