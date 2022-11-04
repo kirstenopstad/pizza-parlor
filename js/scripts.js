@@ -20,6 +20,9 @@ Pizza.prototype.getPrice = function() {
         break;
       case ("extra-large"):
         price = 14
+        break;
+      default:
+        return 0;
     }
   } else {
     return 0;
