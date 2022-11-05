@@ -30,7 +30,7 @@ A website for a pizza company where a user can choose one or more individual top
 
 ![Screenshots](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.03bZmDGXaBhBYyxxp3Ls3gHaEA%26pid%3DApi&f=1&ipt=e980d57210242747a51c41421e1f09a6de3b1fdaeaadd297496787bb64e80c88&ipo=images) -->
 
-[x] [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>)
+[Check Out Pizza Planet Live!](https://kirstenopstad.github.io/pizza-parlor/)
 
 ### Goals
 1. Meet project MVP requirements.
