@@ -51,9 +51,8 @@ Order.prototype.addItem = function(item) {
 }
 
 // User Interface Logic
-let order = new Order();
 
-function handleAddToOrder() {
+function handleAddToOrder(order) {
   // Remove error msg
   if (document.getElementById("error-msg")) {
     document.getElementById("error-msg").remove();
@@ -83,9 +82,11 @@ function handleAddToOrder() {
   // Reset item
   document.getElementById("pizza-form").reset();
   }
+  return order;
 }
 
-function handleViewOrder() {
+function handleViewOrder(order) {
+    // TODO: pass in order
     // Hide Menu 
     document.getElementById("food-menu").setAttribute("class", "hidden");
     // Show Order Details
@@ -127,14 +128,17 @@ function handleBacktoMenu(orderDetailsDiv) {
 }
 
 window.addEventListener("load", function(){
+  // Initialize Order object
+  let order = new Order();
+
   // When customer clicks "Add to Order"
   const addToOrder = document.getElementById("add-to-order");
   addToOrder.addEventListener("click", function() {
-    handleAddToOrder();
+    handleAddToOrder(order);
   });
   // When customer clicks "View Order"
   const viewOrder = document.getElementById("view-order");
-  viewOrder.addEventListener("click", function(){
-    handleViewOrder();
-  });
+  viewOrder.addEventListener("click", function() {
+    handleViewOrder(order);
+  })
 })
