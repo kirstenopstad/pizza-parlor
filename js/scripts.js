@@ -96,7 +96,7 @@ function handleViewOrder() {
     orderDetailsDiv.append(h4);
     const ul = document.createElement("ul");
     const arrayOfItems = Object.keys(order.items);
-    for (i = 1; i <= arrayOfItems.length; i++) {
+    for (let i = 1; i <= arrayOfItems.length; i++) {
       const li = document.createElement("li");
       li.innerText = order.items[i].size + " " + order.items[i].toppings.length + "-topping pizza.";
       const priceSpan = document.createElement("span");
